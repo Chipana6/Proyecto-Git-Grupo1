@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>We Got Kicks | Sneakers & Streetwear</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== BARRA SUPERIOR VERDE ===== -->
+  <div class="top-bar">
+    <span>Actualiza tu ubicación para mejorar tu experiencia en We Got Kicks</span>
+    <button class="top-bar-close" id="cerrar-topbar">✕</button>
+  </div>
+
+  <!-- ===== HEADER PRINCIPAL ===== -->
+  <header class="header">
+    <div class="header-izquierda">
+      <a href="#inicio" class="logo">
+        <img src="logo.png" alt="We Got Kicks" class="logo-img">
+      </a>
+    </div>
+
+    <div class="header-centro">
+      <div class="buscador-header">
+        <span class="icono-buscar">🔍</span>
+        <input type="text" id="buscador" placeholder="Buscar por marca, color, etc.">
+      </div>
+    </div>
+
+    <div class="header-derecha">
+      <a href="#catalogo" class="link-header">Noticias</a>
+      <a href="#beneficios" class="link-header">Información</a>
+      <a href="#contacto" class="link-header">Ayuda</a>
+      <button id="btn-favoritos" class="btn-favoritos">
+        ♡ <span id="contador-favoritos">0</span>
+      </button>
+      <a href="#login" class="btn-registrar">Registrarse | Entrar</a>
+    </div>
+  </header>
+
+  <!-- ===== MENÚ DE CATEGORÍAS ===== -->
+  <nav class="menu-categorias">
+    <a href="#" class="menu-item menu-todo">☰ Todo</a>
+    <a href="#" class="menu-item activo">En Tendencia</a>
+    <a href="#" class="menu-item">Nuevo</a>
+    <a href="#" class="menu-item">Ofertas</a>
+    <a href="#" class="menu-item" data-genero="hombre">Hombres</a>
+    <a href="#" class="menu-item" data-genero="mujer">Mujeres</a>
+    <a href="#" class="menu-item">Niños</a>
+    <a href="#" class="menu-item" data-categoria="basket">Basket</a>
+    <a href="#" class="menu-item" data-categoria="running">Running</a>
+    <a href="#" class="menu-item" data-categoria="casual">Casual</a>
+    <a href="#" class="menu-item" data-categoria="ropa">Ropa</a>
+    <a href="#" class="menu-item" data-categoria="accesorios">Accesorios</a>
+  </nav>
+
+  <!-- ===== BREADCRUMB ===== -->
+  <div class="breadcrumb">
+    <span>Inicio</span> / <span>Catálogo</span> / <span id="breadcrumb-actual">En Tendencia</span>
+  </div>
+
+  <!-- ===== HERO CON CARRUSEL ===== -->
+  <section id="inicio" class="hero-carrusel">
+    <div class="carrusel" id="carrusel"></div>
+    <button class="carrusel-btn carrusel-prev" id="carrusel-prev">❮</button>
+    <button class="carrusel-btn carrusel-next" id="carrusel-next">❯</button>
+    <div class="carrusel-indicadores" id="carrusel-indicadores"></div>
+  </section>
+
+  <!-- ===== MARCAS POPULARES ===== -->
+  <section class="marcas">
+    <h2>Marcas Populares</h2>
+    <div class="marcas-grid">
+      <button class="marca-card" data-marca="Nike">Nike</button>
+      <button class="marca-card" data-marca="Supreme">Supreme</button>
+      <button class="marca-card" data-marca="Off White">Off White</button>
+      <button class="marca-card" data-marca="Valley">Valley</button>
+      <button class="marca-card" data-marca="Adidas">Adidas</button>
+    </div>
+  </section>
+
+  <!-- ===== CATÁLOGO / RECOMENDADOS ===== -->
+  <section id="catalogo" class="catalogo">
+    <div class="catalogo-header">
+      <h2>Recomendados para ti</h2>
+    </div>
+
+    <div class="filtros">
+      <div class="filtro-grupo">
+        <select id="filtro-categoria">
+          <option value="todos">Categoría: Todas</option>
+          <option value="basket">Basket</option>
+          <option value="running">Running</option>
+          <option value="casual">Casual</option>
+          <option value="ropa">Ropa</option>
+          <option value="accesorios">Accesorios</option>
+        </select>
+      </div>
+
+      <div class="filtro-grupo">
+        <select id="filtro-genero">
+          <option value="todos">Género: Todos</option>
+          <option value="hombre">Hombre</option>
+          <option value="mujer">Mujer</option>
+        </select>
+      </div>
+
+      <div class="filtro-grupo">
+        <select id="filtro-marca">
+          <option value="todas">Marca: Todas</option>
+          <option value="Nike">Nike</option>
+          <option value="Adidas">Adidas</option>
+          <option value="Puma">Puma</option>
+          <option value="Reebok">Reebok</option>
+          <option value="New Balance">New Balance</option>
+          <option value="Supreme">Supreme</option>
+          <option value="Valley">Valley</option>
+          <option value="Off White">Off White</option>
+        </select>
+      </div>
+
+      <button id="limpiar-filtros" class="btn-limpiar">Limpiar filtros</button>
+    </div>
+
+    <p id="contador-productos" class="contador">25 productos encontrados</p>
+
+    <div id="grid-productos" class="grid-productos"></div>
+  </section>
+
+  <!-- ===== NUEVOS LANZAMIENTOS ===== -->
+  <section class="lanzamientos">
+    <div class="catalogo-header">
+      <h2>Nuevos Lanzamientos 🆕</h2>
+    </div>
+    <div class="lanzamientos-scroll" id="lanzamientos-scroll"></div>
+  </section>
+
+  <!-- ===== BENEFICIOS ===== -->
+  <section id="beneficios" class="beneficios">
+    <h2>¿Por Qué Elegirnos?</h2>
+    <div class="beneficios-grid">
+      <div class="beneficio-card">
+        <span class="icono">🚚</span>
+        <h3>Envío Rápido</h3>
+        <p>Entregamos en todo el país en 24-48 horas</p>
+      </div>
+      <div class="beneficio-card">
+        <span class="icono">💎</span>
+        <h3>Calidad Premium</h3>
+        <p>Productos verificados con los más altos estándares</p>
+      </div>
+      <div class="beneficio-card">
+        <span class="icono">🛡️</span>
+        <h3>Garantía</h3>
+        <p>Todos nuestros productos incluyen garantía</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== LOGIN ===== -->
+  <section id="login" class="login">
+    <div class="login-card">
+      <h2>Acceso Clientes</h2>
+      <form id="form-login">
+        <input type="email" id="login-email" placeholder="Correo electrónico" required>
+        <input type="password" id="login-password" placeholder="Contraseña" required>
+        <select id="login-tipo">
+          <option value="">Selecciona tipo de cliente</option>
+          <option value="mayorista">Mayorista</option>
+          <option value="minorista">Minorista</option>
+        </select>
+        <button type="submit" class="btn-verde btn-full">Iniciar Sesión</button>
+        <p id="mensaje-login" class="mensaje"></p>
+      </form>
+      <p class="login-info">¿No tienes cuenta? <a href="#contacto">Regístrate aquí</a></p>
+    </div>
+  </section>
+
+  <!-- ===== CONTACTO ===== -->
+  <section id="contacto" class="contacto">
+    <h2>Contáctanos</h2>
+    <form id="form-contacto" class="form-contacto">
+      <input type="text" id="contacto-nombre" placeholder="Nombre completo" required>
+      <input type="email" id="contacto-email" placeholder="Correo electrónico" required>
+      <textarea id="contacto-mensaje" placeholder="Escribe tu mensaje..." required></textarea>
+      <button type="submit" class="btn-verde btn-full">Enviar Mensaje</button>
+      <p id="mensaje-contacto" class="mensaje"></p>
+    </form>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <p>© 2025 We Got Kicks | Todos los derechos reservados</p>
+  </footer>
+
+  <!-- ===== BOTÓN VOLVER ARRIBA ===== -->
+  <button id="btn-top" class="btn-top" title="Volver arriba">↑</button>
+
+  <!-- ===== TOASTS ===== -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
