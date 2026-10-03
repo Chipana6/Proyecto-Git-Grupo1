@@ -1,4 +1,9 @@
 // ============================================
+// INTEGRANTE C: Funcionalidad JavaScript
+// Autor: Cristian Chipana
+// Proyecto: We Got Kicks
+// ============================================
+// ============================================
 // WE GOT KICKS - Script principal
 // Autor: Integrante C
 // ============================================
